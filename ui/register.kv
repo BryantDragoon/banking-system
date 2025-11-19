@@ -1,0 +1,138 @@
+<AccountRegisterScreen>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            RoundedRectangle:
+                pos: self.x + 5, self.y + 5
+                size: self.width -10, self.height - 10
+
+        canvas.after:
+            Color:
+                rgba: 0, 0, 0, 1
+            Line:
+                points: [0, self.height, self.width, self.height]
+                width: 5
+            Line:
+                points: [0, 0, self.width, 0]
+                width: 5
+
+        BoxLayout:
+            id: form_box
+            orientation: "vertical"
+            padding: self.width / 10
+            spacing: 5
+            size_hint_y: None
+            height: self.minimum_height
+
+            Label:
+                text: "Account Registration"
+                bold: True
+                font_size: 32
+                color: 0, 0, 0, 1
+                size_hint_y: None
+                text_size: self.size
+                halign: "center"
+                valign: "middle"
+            
+            Label:
+                text: "PERSONAL INFO"
+                bold: True
+                font_size: 23
+                color: 0, 0, 0, 1
+                size_hint_y: None
+                text_size: self.size
+                halign: "left"
+                valign: "middle"
+            
+            MyFormField:
+                id: name_field
+                field_label: "Name(s):"
+
+            MyFormField:
+                id: last_name_field
+                field_label: "Last Name(s):"
+
+            MyFormField:
+                id: telephone_field
+                field_label: "Telephone:"
+                hint_text: "10 digits"
+
+            MyFormField:
+                id: birth_field
+                field_label: "Date of Birth:"
+                hint_text: "DD/MM/YYYY"
+            
+            MyFormField:
+                id: country_field
+                field_label: "Country:"
+            
+            BoxLayout:
+                size_hint_y: None
+                orientation: "vertical"
+                height: 60
+
+                Label:
+                    text: "Marital Status:"
+                    font_size: 16
+                    color: 0, 0, 0, 1
+                    text_size: self.size
+                    halign: "left"
+                    valign: "bottom"
+                    size_hint_y: .7
+                Spinner:
+                    id: marital_field 
+                    text: "Select an option"
+                    color: 0, 0, 0, 1
+                    values: ("Married", "Widowed", "Separated", "Divorced", "Single")
+                    background_normal: ""
+                    background_color: 0.94, 0.94, 0.94, 1
+
+            Label:
+                text: "LOGIN DETAILS"
+                bold: True
+                font_size: 23
+                color: 0, 0, 0, 1
+                size_hint_y: None
+                text_size: self.size
+                halign: "left"
+                valign: "middle"
+            
+            MyFormField:
+                id: login_id_field
+                field_label: "Login ID:"
+                hint_text: "Username or E-mail"
+            
+            MyFormField:
+                id: password_field
+                field_label: "Password:"
+                is_password: True
+
+            BoxLayout:
+                size_hint_y: None
+                orientation: "horizontal"
+                height: 60
+
+                Button:
+                    text: "Cancel"
+                    color: 0, 0, 0, 1
+                    background_normal: ''
+                    background_color: 1, .5, .5, .7
+                    on_release: root.return_to_login()
+                Button:
+                    text: "Confirm"
+                    color: 0, 0, 0, 1
+                    background_normal: ''
+                    background_color: .5, 1, .5, .7
+                    on_release: root.insert_registered_account()
+
+    Label:
+        text: "@BryantDragoon"
+        color: 0.3, 0.3, 0.3, 0.4
+        font_size: 18
+        size: self.texture_size
+        pos_hint: {"right": 1, "bottom": 1}
+        size_hint: None, None

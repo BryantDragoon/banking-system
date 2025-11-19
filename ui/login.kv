@@ -1,0 +1,101 @@
+<LoginScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.53, 0.81, 0.98, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 10
+        size_hint: 1, .6
+        pos_hint: {"center_x": 0.5, "center_y": 0.6} 
+
+        Image:
+            source: "assets/logo.png"
+
+        Label:
+            text: "Welcome !"
+            bold: True
+            font_size: 40
+            text_size: self.size
+            halign: "center"
+            valign: "middle"
+
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 10
+            size_hint: .8, None
+            height: self.minimum_height if root.hidden_layout else 0
+            pos_hint: {"center_x": 0.5} 
+            opacity: root.hidden_layout
+            disabled: root.hidden_layout == 0
+
+            MyFormField:
+                id: login_id
+                hint_text: "Username or email"
+
+            MyFormField:
+                id: password
+                hint_text: "Password"
+                is_password: True
+
+            MyRoundedButton:
+                text: "Sign in"
+                pos_hint: {"center_x": 0.5}
+                on_release: root.check_credentials()
+
+            Widget:
+                size_hint_y: None
+                height: 60
+
+            Label:
+                text: "Not a member?"
+                color: 0, 0, 0, 1
+                font_size: 20
+                text_size: self.size
+                halign: "center"
+                valign: "middle"
+
+            MyRoundedButton:
+                text: "Create an account"
+                height: 40
+                pos_hint: {"center_x": 0.5}
+                on_release: root.go_to_register()
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: self.minimum_height if root.hidden_layout == 0 else 0
+            spacing: 10
+            opacity: 1 - root.hidden_layout
+            disabled: root.hidden_layout == 1
+
+            MyRoundedButton:
+                text: "Login"
+                pos_hint: {"center_x": 0.5}
+                height: 60 if root.hidden_layout == 0 else 0
+                on_release: root.show_hidden_layout()
+
+            MyRoundedButton:
+                text: "Create Account"
+                pos_hint: {"center_x": 0.5}
+                height: 60 if root.hidden_layout == 0 else 0
+                on_release: root.go_to_register()
+                
+    Button:
+        text: "DB Tables"
+        size_hint: None, None
+        size: self.size
+        opacity: .2
+        on_release: root.go_to_database()
+
+
+    Label:
+        text: "@BryantDragoon"
+        color: 0.3, 0.3, 0.3, 0.4
+        font_size: 18
+        size: self.texture_size
+        pos_hint: {"right": 1, "bottom": 1}
+        size_hint: None, None

@@ -1,0 +1,61 @@
+<DatabaseTablesScreen>:
+    BoxLayout:
+        orientation: "vertical"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, None
+            height: self.minimum_height
+            
+            Button:
+                text: "Return"
+                size_hint: None, None
+                size: 120, 40
+                on_release: root.go_to_login()
+
+            Widget:
+
+            Button:
+                text: "Clear All"
+                size_hint: None, None
+                size: 120, 40
+                on_release: root.clear_all()
+                background_normal: ''
+                background_color: 1, .5, .5, .7
+
+        Label:
+            text: "Select table:"
+            size_hint: 1, None
+            font_size: self.height * .6
+            height: 60
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, None
+            height: 60
+
+            ToggleButton:
+                text: "users"
+                on_state: root.on_state_show_users_table(self, self.state)
+
+            ToggleButton:
+                text: "accounts"
+                on_release: root.on_state_show_accounts_table(self, self.state)
+
+            ToggleButton:
+                text: "transactions"
+                on_release: root.on_state_show_transactions_table(self, self.state)
+        
+        BoxLayout:
+            id: tables_screen
+            orientation: "vertical"
+        
+        
+    Label:
+        text: "@BryantDragoon"
+        color: 0.3, 0.3, 0.3, 0.4
+        font_size: 18
+        size: self.texture_size
+        pos_hint: {"right": 1, "bottom": 1}
+        size_hint: None, None
+

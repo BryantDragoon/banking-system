@@ -1,0 +1,143 @@
+<DashboardScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.988, 0.925, 0.988, 1
+        RoundedRectangle:
+            pos: self.x + 5, self.y + 5
+            size: self.width -10, self.height - 10
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 10
+        padding: 5
+        pos_hint: {"center_x": 0.5}
+        
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, .17
+            padding: 2
+
+            canvas.before:
+                Color:
+                    rgba: 1, 0.4, 0.9, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                Line:
+                    points: self.x, self.y + 5, self.x + self.width, self.y + 5 
+                    width: 5
+                    cap: "none"
+
+            Label:
+                text: "Welcome Back, " + root.user_name
+                font_size: self.height * .4
+                halign: "left"
+                valign: "middle"
+                text_size: self.size
+
+            MyRoundedButton:
+                size_hint_x: .3
+                text: "Sign Out"
+                height: 40
+                pos_hint: {"center_x": 0.5, "center_y": .5}
+                on_release: root.sign_out()
+
+        BoxLayout:
+            orientation: "vertical"
+            pos_hint: {"center_x": 0.5}
+            size_hint: .7, .3
+
+            canvas:
+                Color:
+                    rgba: 0.88, 0.91, 0.95, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                text: "Balance"
+                size_hint_y: .4
+                font_size: self.height * .6
+                color: 1, 0.4, 0.9, 1
+                bold: True
+
+            Label:
+                text: "$" + str(root.user_balance)
+                font_size: self.height * .6
+                color: 1, 0.4, 0.9, 1
+
+        BoxLayout:
+            orientation: "horizontal"
+            pos_hint: {"center_x": 0.5}
+            size_hint: 1, .2
+            spacing: 10
+            
+            BoxLayout:
+                orientation: "vertical"
+
+                MyRoundedButton:
+                    size_hint: .5, 1
+                    text: "D"
+                    pos_hint: {"center_x": 0.5}
+                    on_release: root.bring_deposit_withdraw_window()
+                
+                Label: 
+                    text: "Deposit"
+                    color: 0,0,0,1
+
+            BoxLayout:
+                orientation: "vertical"
+
+                MyRoundedButton:
+                    size_hint: .5, 1
+                    text: "W"
+                    pos_hint: {"center_x": 0.5}
+                    on_release: root.bring_deposit_withdraw_window(tr_type=1)
+                
+                Label: 
+                    text: "Withdraw"
+                    color: 0,0,0,1
+
+            BoxLayout:
+                orientation: "vertical"
+
+                MyRoundedButton:
+                    size_hint: .5, 1
+                    text: "T"
+                    pos_hint: {"center_x": 0.5}
+                    on_release: root.bring_transfer_window()
+                
+                Label: 
+                    text: "Transfer"
+                    color: 0,0,0,1        
+        Label:
+            text: "Recent Transactions"
+            size_hint_y: .13
+            font_size: self.height * .45
+
+            canvas.before:
+                Color:
+                    rgba: .75, 0.71, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+
+            BoxLayout:
+                id: recent_transactions_box
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 5
+                padding: [15, 0, 15, 30]
+
+    Label:
+        text: "@BryantDragoon"
+        color: 0.3, 0.3, 0.3, 0.4
+        font_size: 18
+        size: self.texture_size
+        pos_hint: {"right": 1, "bottom": 1}
+        size_hint: None, None
