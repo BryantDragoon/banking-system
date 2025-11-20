@@ -1,47 +1,54 @@
 
 # My Banking System App [Demo]
 
-Demo of a functional CRUD application that simulates a banking system using an SQL database.
+A functional CRUD application that simulates a simple banking system using an SQLite database.
 
 ## 🎯 Problem Description
 
-The use of databases is essential in the development of many applications, especially if they need to store or retain information in non-volatile memory, so they can later retrieve records or state after multiple uses.
+Databases are essential in modern application development, especially for systems that require persistent storage to retrieve information or restore state across multiple sessions.
 
 ## 🛠️ Proposed Solution
-
-A fully functional, demonstrative application was developed to showcase my knowledge to create Python applications that integrate SQLite for data storage. The app was designed based on one of the most popular examples requiring the integration of the four fundamental database manipulation functions—create, read, update, and delete—the simulation of a banking system.
+To demonstrate my ability and knowledge to build Python applications integrated with SQLite, I developed a fully functional application based on one of the most common real-world scenarios requiring CRUD operations: a basic banking system.  
+The app showcases the four fundamental database operations—create, read, update, and delete—through an intuitive interface and practical use cases.
 
 ## ✨ Main Results
 
-A fully functional application was developed, including app animations and functional basic operations like any real bank system has: users registration, a personal dashboard to deploy bank account balance and movements in the account, operations of deposits, withdraws and transferences.
+A complete and fully functional application was developed, featuring smooth interface transitions, proper system validations, and the essential operations found in a real banking environment:
 
-- A single database containing the three tables: one for storing users, one for bank accounts, and one for all transactions.
-- The app follows the minimum regulation like no repeated Login IDs, no withdrawals if not enought money, just valid amounts, etc.
-- Every operations generates a transaction record with timestamp for reference
-- The most important, the app was developed using a multi platform aproach, so is totally functional from pc as from a phone (asuming that the code is debidamente compilado)
+- User registration, personalized dashboards, and account overviews.
+- Deposits, withdrawals, and transfers, each with proper validation.
+- A single database containing three well-structured tables: users, bank accounts, and transaction history.
+- Validation rules, such as preventing duplicate Login IDs, disallowing insufficient-balance withdrawals, and enforcing valid input amounts.
+- Automatic transaction logging, including timestamps for each operation.
+- Multi-platform approach: the application is fully operational on both desktop and mobile devices (assuming proper compilation for the target platform).
 
 ## 📸 Visual Overview
 
 ### User Login Screen
 
-- To access the dashboard and view balance and activity, the user must first log in by entering a password that matches a previously registered login ID. If the user is new and has not yet registered, they can easily do so by filling out a simple registration form with their information.
+To access their account dashboard, users must enter a valid Login ID and password. New users may register quickly through a simple form that collects their essential information.
+
+<img src="/docs/Screenshot_login_phone.jpg" alt="Login Screen" width="20%">
 
 ### Registration Screen
 
-- The registration screen meets the minimum requirements of requiring all fields to be filled in, but more importantly, it checks that the chosen ID is not already in use, displaying a pop-up message that alerts the user and only allows them to proceed after entering a unique ID.
+- The registration screen ensures all fields are completed and verifies that the chosen Login ID is unique. If the ID is already in use, the system displays a warning and prevents the user from proceeding until a valid, unused ID is provided.
+
+<img src="/docs/Screenshot_registrationscreen_phone.jpg" alt="Registration Screen" width="20%">
 
 ### Dashboard Screen
 
-- Once logged in, the user can view their name, balance, and transaction history on the dashboard (from most recent to oldest). Negative balances (such as withdrawals or transfers to other users) are displayed in red, while positive balances (such as deposits or transfers) are shown in blue. Each transaction adheres to minimum requirements: deposits must be positive amounts, and withdrawals and transfers must be equal to or less than the available balance in the account. Transactions are updated and displayed on the screen immediately. Transfers are only possible if other users are registered, as they must be selected from a list (simulating and simplifying the tedious task of typing account numbers, acting instead as if they were your registered contacts).
+Once logged in, users are presented with their name, account balance, and full transaction history, listed from most recent to oldest.  
+Color coding provides clarity: red for negative amounts (withdrawals or outgoing transfers), blue for positive amounts (deposits or incoming transfers).  
+All transactions follow the necessary rules: deposits must be positive, and withdrawals or transfers cannot exceed the available balance. Operations update the database and display immediately. Transfers require selecting a registered recipient from a list, simulating stored contacts and avoiding manual entry of account numbers (for greater ease).
 
 ### Database Records Screen
-As an added feature, a discreet button in the lower left corner of the login screen provides access to a screen displaying the data stored in each table created in the database. This serves primarily as an aid for visualizing the records.
+
+As an additional feature, a small, discreet button on the bottom left corner of the login screen provides access to a table viewer showing the contents of all database tables. This tool is primarily intended to help visualize the stored records during development or testing.
 
 
 
 
-
-<img src="/images/main_page.jpeg" alt="Scheduling Main Page" width="20%">
 <img src="/images/scheduled.jpeg" alt="Scheduling in a Specific Day" width="20%">
 <img src="/images/scheduling form.jpeg" alt="Scheduling Form" width="20%">
 
