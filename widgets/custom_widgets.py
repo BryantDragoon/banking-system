@@ -80,7 +80,7 @@ class MyDepositWithdrawPopupWindow(ModalView):
         
         if self.movement_type == 0: # Deposito
             try: # Se corrabora que exista un numero valido y que ademas sea un valor positivo
-                amount = float(self.ids.amount_field.text) #
+                amount = float(self.ids.amount_field.text)
                 valid_amount = amount > 0.0
             except:
                 valid_amount = False

@@ -1,11 +1,11 @@
 <MyFormField>:
     size_hint_y: None
-    height: 60
+    height: "50dp"
     orientation: "vertical"
 
     Label:
         text: root.field_label
-        font_size: 16
+        font_size: "12sp"
         color: 0, 0, 0, 1
         text_size: self.size
         halign: "left"
@@ -49,7 +49,10 @@
 <MyRoundedButton>:
     background_normal: ""
     background_color: 0,0,0,0
-
+    text: root.text
+    font_size: self.height * .45
+    size_hint: .6, None
+    height: "40dp"
     on_state:
         root.bg_color = (0.7, 0.7, 0.7, 1) if self.state == "down" else root.original_bg_color
     
@@ -59,12 +62,7 @@
         RoundedRectangle:
             pos: self.pos
             size: self.size
-            radius: [30]
-
-    text: root.text
-    font_size: self.height * .45
-    size_hint: .6, None
-    height: 60
+            radius: [dp(25)]
 
 
 <MyDepositWithdrawPopupWindow>:
@@ -76,8 +74,8 @@
 
     BoxLayout:
         orientation: "vertical"
-        padding: 20
-        spacing: 15
+        padding: "20dp"
+        spacing: "15dp"
 
         Label:
             text: "Enter" + (" deposit " if root.movement_type == 0 else " withdraw ") + "amount:"
@@ -106,7 +104,8 @@
 <MyTransactionCard>:
     orientation: "vertical"
     size_hint: 1, None
-    height: 80
+    height: "65dp"
+    padding: "5dp"
 
     canvas.before:
         Color:
@@ -125,7 +124,7 @@
                 text: root.transaction_date
                 color: 0.68, 0.71, 0.75, 1
                 font_size: self.height
-                size_hint: 1, .7
+                size_hint: 1, .6
                 text_size: self.size
                 halign: 'left'
                 valign: 'top'
@@ -150,13 +149,14 @@
         halign: "left"
         valign: "middle"
         shorten: True
+        size_hint: 1., .9
 
 
 <MyTransferCard>:
     orientation: "vertical"
     size_hint: 1, None
-    height: 80
-    padding: 10
+    height: "65dp"
+    padding: "10dp"
 
     canvas.before:
         Color:
@@ -193,11 +193,11 @@
     BoxLayout:
         id: transfer_window_box
         orientation: "vertical"
-        padding: 5
+        padding: "5dp"
 
         BoxLayout:
             orientation: "vertical"
-            padding: 10
+            padding: "10dp"
 
             Label:
                 text: "Select destination account to transfer:"
@@ -224,14 +224,14 @@
                     orientation: "vertical"
                     size_hint: 1, None
                     height: self.minimum_height
-                    padding: 5
-                    spacing: 5
+                    padding: "5dp"
+                    spacing: "5dp"
 
 
 <SecondTransferWindow>:
     orientation: "vertical"
-    padding: [15,20,20,15]
-    spacing: 10
+    padding: ["15dp","20dp","20dp","15dp"]
+    spacing: "8dp"
     background_color: 0.988, 0.925, 0.988, 1
     background: ""
 
@@ -247,8 +247,8 @@
     BoxLayout:
         orientation: "vertical"
         size_hint: 1, None
-        height: 100
-        padding: 10
+        height: "90dp"
+        padding: "10dp"
 
         canvas.before:
             Color:
@@ -283,7 +283,7 @@
                 Label:
                     text: "$ " + str(root.origin_balance)
                     color: 0.11, 0.259, 1, 1
-                    font_size: self.height * .9   #self.width * .15
+                    font_size: self.height * .9
                     text_size: self.size 
                     halign: "center"
                     valign: "middle"
@@ -300,8 +300,8 @@
     BoxLayout:
         orientation: "vertical"
         size_hint: 1, None
-        height: 130
-        padding: 10
+        height: "100dp"
+        padding: "10dp"
 
         canvas.before:
             Color:
@@ -313,7 +313,7 @@
         Label:
             text: "Destination"
             color: 0.11, 0.259, 1, 1
-            font_size: self.height * .8
+            font_size: self.height * .9
             text_size: self.size
             halign: "left"
             valign: "top"
@@ -321,7 +321,7 @@
         Label:
             text: str(root.destination_name)
             color: 0.11, 0.259, 1, 1
-            font_size: self.height * .65
+            font_size: self.height * .7
             text_size: self.size
             halign: "left"
             valign: "center"
@@ -336,8 +336,8 @@
         
     BoxLayout:
         orientation: "vertical"
-        padding: 10
-        spacing: 15
+        padding: "5dp"
+        spacing: "10dp"
 
         Label:
             text: "Amount"
@@ -361,7 +361,7 @@
 
     BoxLayout:
         orientation: "vertical"
-        padding: [10, 0, 10, 10]
+        padding: ["5dp", "0dp", "5dp", "10dp"]
         size_hint: 1, .4
 
         Button:
@@ -386,7 +386,7 @@
 <UserRow>:
     orientation: "horizontal"
     size_hint_y: None
-    height: 25
+    height: "20dp"
 
     Label:
         text: str(root.user_id)
@@ -426,7 +426,7 @@
     BoxLayout:
         orientation: "horizontal"
         size_hint_y: None
-        height: 30
+        height: "30dp"
 
         canvas.before:
             Color:
@@ -476,7 +476,7 @@
     BoxLayout:
         orientation: "horizontal"
         size_hint_y: None
-        height: 30
+        height: "30dp"
 
         canvas.before:
             Color:
@@ -517,7 +517,7 @@
 <AccountRow>:
     orientation: "horizontal"
     size_hint_y: None
-    height: 25
+    height: "20dp"
 
     Label:
         text: root.account_id
@@ -540,7 +540,7 @@
     BoxLayout:
         orientation: "horizontal"
         size_hint_y: None
-        height: 30
+        height: "30dp"
 
         canvas.before:
             Color:
@@ -591,7 +591,7 @@
 <TransactionRow>:
     orientation: "horizontal"
     size_hint_y: None
-    height: 25
+    height: "20dp"
 
     Label:
         text: root.transaction_id

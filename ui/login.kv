@@ -8,7 +8,7 @@
 
     BoxLayout:
         orientation: "vertical"
-        spacing: 10
+        spacing: "10dp"
         size_hint: 1, .6
         pos_hint: {"center_x": 0.5, "center_y": 0.6} 
 
@@ -18,16 +18,16 @@
         Label:
             text: "Welcome !"
             bold: True
-            font_size: 40
+            font_size: "35sp"
             text_size: self.size
             halign: "center"
             valign: "middle"
 
         BoxLayout:
             orientation: "vertical"
-            spacing: 10
+            spacing: "10dp"
             size_hint: .8, None
-            height: self.minimum_height if root.hidden_layout else 0
+            height: self.minimum_height if root.hidden_layout else "0dp"
             pos_hint: {"center_x": 0.5} 
             opacity: root.hidden_layout
             disabled: root.hidden_layout == 0
@@ -48,40 +48,40 @@
 
             Widget:
                 size_hint_y: None
-                height: 60
+                height: "60dp"
 
             Label:
                 text: "Not a member?"
                 color: 0, 0, 0, 1
-                font_size: 20
+                font_size: "15sp"
                 text_size: self.size
                 halign: "center"
                 valign: "middle"
 
             MyRoundedButton:
                 text: "Create an account"
-                height: 40
+                height: "30dp"
                 pos_hint: {"center_x": 0.5}
                 on_release: root.go_to_register()
 
         BoxLayout:
             orientation: "vertical"
             size_hint_y: None
-            height: self.minimum_height if root.hidden_layout == 0 else 0
-            spacing: 10
+            height: self.minimum_height if root.hidden_layout == 0 else "0dp"
+            spacing: "10dp"
             opacity: 1 - root.hidden_layout
             disabled: root.hidden_layout == 1
 
             MyRoundedButton:
                 text: "Login"
                 pos_hint: {"center_x": 0.5}
-                height: 60 if root.hidden_layout == 0 else 0
+                height: "45dp" if root.hidden_layout == 0 else "0dp"
                 on_release: root.show_hidden_layout()
 
             MyRoundedButton:
                 text: "Create Account"
                 pos_hint: {"center_x": 0.5}
-                height: 60 if root.hidden_layout == 0 else 0
+                height: "45dp" if root.hidden_layout == 0 else "0dp"
                 on_release: root.go_to_register()
                 
     Button:
@@ -95,7 +95,7 @@
     Label:
         text: "@BryantDragoon"
         color: 0.3, 0.3, 0.3, 0.4
-        font_size: 18
+        font_size: "18sp"
         size: self.texture_size
         pos_hint: {"right": 1, "bottom": 1}
         size_hint: None, None

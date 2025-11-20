@@ -15,7 +15,7 @@ class WindowManager(ScreenManager):
     pass
 
 
-# Resolucion usada para visualizar ventana de trabajo
+# Resolucion usada para visualizar ventana de trabajo en pruebas, comentar si se va compilar app
 Window.size = (360, 640) 
 
 

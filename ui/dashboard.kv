@@ -3,19 +3,19 @@
         Color:
             rgba: 0.988, 0.925, 0.988, 1
         RoundedRectangle:
-            pos: self.x + 5, self.y + 5
-            size: self.width -10, self.height - 10
+            pos: self.x + dp(4), self.y + dp(4)
+            size: self.width - dp(8), self.height - dp(8)
 
     BoxLayout:
         orientation: "vertical"
-        spacing: 10
-        padding: 5
+        spacing: "10dp"
+        padding: "4dp"
         pos_hint: {"center_x": 0.5}
         
         BoxLayout:
             orientation: "horizontal"
             size_hint: 1, .17
-            padding: 2
+            padding: "2dp"
 
             canvas.before:
                 Color:
@@ -24,7 +24,7 @@
                     pos: self.pos
                     size: self.size
                 Line:
-                    points: self.x, self.y + 5, self.x + self.width, self.y + 5 
+                    points: self.x, self.y + dp(4), self.x + self.width, self.y + dp(4) 
                     width: 5
                     cap: "none"
 
@@ -38,7 +38,7 @@
             MyRoundedButton:
                 size_hint_x: .3
                 text: "Sign Out"
-                height: 40
+                height: "30dp"
                 pos_hint: {"center_x": 0.5, "center_y": .5}
                 on_release: root.sign_out()
 
@@ -70,7 +70,7 @@
             orientation: "horizontal"
             pos_hint: {"center_x": 0.5}
             size_hint: 1, .2
-            spacing: 10
+            spacing: "10dp"
             
             BoxLayout:
                 orientation: "vertical"
@@ -131,13 +131,13 @@
                 orientation: "vertical"
                 size_hint_y: None
                 height: self.minimum_height
-                spacing: 5
-                padding: [15, 0, 15, 30]
+                spacing: "5dp"
+                padding: ["15dp", "0dp", "15dp", "30dp"]
 
     Label:
         text: "@BryantDragoon"
         color: 0.3, 0.3, 0.3, 0.4
-        font_size: 18
+        font_size: "18sp"
         size: self.texture_size
         pos_hint: {"right": 1, "bottom": 1}
         size_hint: None, None

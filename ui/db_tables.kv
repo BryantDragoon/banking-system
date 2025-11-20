@@ -10,7 +10,7 @@
             Button:
                 text: "Return"
                 size_hint: None, None
-                size: 120, 40
+                size: "100dp", "35dp"
                 on_release: root.go_to_login()
 
             Widget:
@@ -18,7 +18,7 @@
             Button:
                 text: "Clear All"
                 size_hint: None, None
-                size: 120, 40
+                size: "100dp", "35dp"
                 on_release: root.clear_all()
                 background_normal: ''
                 background_color: 1, .5, .5, .7
@@ -27,12 +27,12 @@
             text: "Select table:"
             size_hint: 1, None
             font_size: self.height * .6
-            height: 60
+            height: "45dp"
 
         BoxLayout:
             orientation: "horizontal"
             size_hint: 1, None
-            height: 60
+            height: "45dp"
 
             ToggleButton:
                 text: "users"
@@ -54,8 +54,9 @@
     Label:
         text: "@BryantDragoon"
         color: 0.3, 0.3, 0.3, 0.4
-        font_size: 18
+        font_size: "18sp"
         size: self.texture_size
         pos_hint: {"right": 1, "bottom": 1}
         size_hint: None, None
+        padding: "5dp"
 
