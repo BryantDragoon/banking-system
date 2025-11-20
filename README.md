@@ -56,7 +56,8 @@ All transactions follow the necessary rules: deposits must be positive, and with
   <img src="/docs/Screenshot_dashboard_final.jpg" alt="Dashboard after a few operations" width="20%">
 </div>
 
-As expected, the other user sees a positive balance from from the transfer:
+As expected, the other user sees a positive balance from the transfer:
+
 <img src="/docs/Screenshot_dashboard_other_user.jpg" alt="Dashboard from other user" width="20%">
 
 ### Database Records Screen
@@ -65,52 +66,41 @@ As an additional feature, a small, discreet button on the bottom left corner of 
 
 <img src="/docs/Screenshot_database.jpg" alt="Database Tables viewer" width="40%">
 
+### Multi-platform aproach
 
+As mentioned earlier, one of the advantages of developing this project with Python and Kivy is the ability to port the application to mobile platforms with only a few additional steps. In fact, all images shown so far were taken from the application running on my Android device.  
+Since several interface components use relative and auto-adjusting sizing, the layout may appear slightly different depending on the device’s screen dimensions. However, the application remains fully functional, and any minor differences can be easily refined through minor UI adjustments for the target platform.
 
+Below are some comparisons showing how the interface looks on a desktop environment versus on my mobile device:
+
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="/docs/Captura de pantalla 2025-11-20 023959.png" alt="Login Desktop" width="25%">
+  <img src="/docs/Screenshot_login_phone.jpg" alt="Login Phone" width="20%">
+</div>
+
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="/docs/Captura de pantalla 2025-11-20 024054.png" alt="Registration Desktop" width="25%">
+  <img src="/docs/Screenshot_registrationscreen_phone.jpg" alt="Registration Phone" width="20%">
+</div>
 
 ## 📁 Project Structure
 
 ```
 main/
-├── images/ # Images used in README.md
-├── source/ # Source codes of the project
-│ ├── admin/ # Administrators program code (extended capabilities with more functions)
-│ └── user/ # End users program code
-└── README.md # Project overview
+├── assets/ # Assets for the project
+├── database/ # Source code of the used SQLite functions in the project
+├── docs/ # Images used in README.md
+├── ui/ # Includes all .py and .kv files that define the application's screens, logic, classes, methods, and interface layouts.
+├── widget/ # Includes .py and .kv files that define widgets and their methods created personally for his use in the project.
+├── README.md # Project overview
+├── main.py # Main application entry point; initializes and runs the app
+└── mybankingsystem.kv # Kivy version used
 ```
 
 ## 🧰 Technologies Used
 
-- Dart
-  - Flutter
-    - Firebase
-    - Firebase_ui_auth
-    - Firebase_ui_oauth_google
-    - Cloud_firestore
-    - Calendar
+- Python
+  - Kivy
+  - SQLite
+  - Buildozer # To compile the APK
 
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-my banking system app
-En edición...
-
-<img src="/docs/Captura de pantalla 2025-11-20 023959.png" alt="" width="25%">
-<img src="/docs/Captura de pantalla 2025-11-20 024054.png" alt="" width="25%">
-<img src="/docs/Captura de pantalla 2025-11-20 024113.png" alt="" width="25%">
-<img src="/docs/Captura de pantalla 2025-11-20 024141.png" alt="" width="25%">
-<img src="/docs/Captura de pantalla 2025-11-20 024206.png" alt="" width="25%">
