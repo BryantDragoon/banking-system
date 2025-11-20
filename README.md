@@ -91,7 +91,7 @@ main/
 ├── database/ # Source code of the used SQLite functions in the project
 ├── docs/ # Images used in README.md
 ├── ui/ # Includes all .py and .kv files that define the application's screens, logic, classes, methods, and interface layouts.
-├── widget/ # Includes .py and .kv files that define widgets and their methods created personally for his use in the project.
+├── widgets/ # Includes .py and .kv files that define widgets and their methods created personally for his use in the project.
 ├── README.md # Project overview
 ├── main.py # Main application entry point; initializes and runs the app
 └── mybankingsystem.kv # Kivy version used
@@ -102,5 +102,5 @@ main/
 - Python
   - Kivy
   - SQLite
-  - Buildozer # To compile the APK
+  - Buildozer (To compile the APK)
 
